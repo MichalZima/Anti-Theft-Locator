@@ -30,14 +30,10 @@ the commented section below at the end of the setup() function.
 #include <TinyGPS++.h>
 #include <SoftwareSerial.h>
 
-static const int RXPin = 4, TXPin = 5;
-static const uint32_t GPSBaud = 9600;
+
 
 // The TinyGPS++ object
 TinyGPSPlus gps;
-
-// The serial connection to the GPS device
-SoftwareSerial ss(RXPin, TXPin);
 
 #define FONA_RX 12
 #define FONA_TX 13
@@ -65,13 +61,19 @@ uint8_t readline(char *buff, uint8_t maxbuff, uint16_t timeout = 0);
 
 uint8_t type;
 
+long timeData;
+
+
+
 void setup() {
 
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.println(F("FONA basic test"));
   Serial.println(F("Initializing....(May take 3 seconds)"));
 
-    ss.begin(GPSBaud);
+  pinMode(4, OUTPUT);
+  
+  
 
   fonaSerial->begin(4800);
   if (! fona.begin(*fonaSerial)) {
@@ -587,9 +589,11 @@ void loop() {
         readline(sendto, 20);
         Serial.println(sendto);
         Serial.print(F("Type out one-line message (140 char): "));
-        dtostrf(gps.location.lat(), 12, 9, message1);
-        dtostrf(gps.location.lng(), 12, 9, message2);
-        sprintf(message,"%s ; %s", message1, message2);
+        digitalWrite(4, HIGH);
+        smartDelay(3000);
+        digitalWrite(4, LOW);
+        dtostrf(timeData, 12, 9, message);
+        Serial.println(timeData);
         Serial.println(message);
         if (!fona.sendSMS(sendto, message)) {
           Serial.println(F("Failed"));
@@ -898,4 +902,20 @@ uint8_t readline(char *buff, uint8_t maxbuff, uint16_t timeout) {
   }
   buff[buffidx] = 0;  // null term
   return buffidx;
+}
+
+
+
+
+static void smartDelay(unsigned long ms)
+{
+
+  unsigned long start = millis();
+  do 
+  {
+    while (Serial.available())
+      gps.encode(Serial.read());
+  } while (millis() - start < ms);
+  timeData = gps.time.value();
+  //pinMode(4, INPUT);
 }
