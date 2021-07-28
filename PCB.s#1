@@ -2306,45 +2306,45 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="VALUE" x="146.05" y="45.72" size="1.778" layer="96" rot="MR0"/>
 <attribute name="NAME" x="146.05" y="61.722" size="1.778" layer="95" rot="MR0"/>
 </instance>
-<instance part="R1" gate="G$1" x="10.16" y="25.4" smashed="yes">
-<attribute name="NAME" x="6.35" y="26.8986" size="1.778" layer="95"/>
-<attribute name="VALUE" x="6.35" y="22.098" size="1.778" layer="96"/>
+<instance part="R1" gate="G$1" x="109.22" y="71.12" smashed="yes">
+<attribute name="NAME" x="105.41" y="72.6186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="105.41" y="67.818" size="1.778" layer="96"/>
 </instance>
-<instance part="R2" gate="G$1" x="25.4" y="17.78" smashed="yes">
-<attribute name="NAME" x="21.59" y="19.2786" size="1.778" layer="95"/>
-<attribute name="VALUE" x="21.59" y="14.478" size="1.778" layer="96"/>
+<instance part="R2" gate="G$1" x="55.88" y="76.2" smashed="yes" rot="R90">
+<attribute name="NAME" x="54.3814" y="72.39" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="59.182" y="72.39" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R3" gate="G$1" x="53.34" y="35.56" smashed="yes">
-<attribute name="NAME" x="49.53" y="37.0586" size="1.778" layer="95"/>
-<attribute name="VALUE" x="49.53" y="32.258" size="1.778" layer="96"/>
+<instance part="R3" gate="G$1" x="43.18" y="71.12" smashed="yes">
+<attribute name="NAME" x="39.37" y="72.6186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="39.37" y="67.818" size="1.778" layer="96"/>
 </instance>
-<instance part="R4" gate="G$1" x="53.34" y="25.4" smashed="yes">
-<attribute name="NAME" x="49.53" y="26.8986" size="1.778" layer="95"/>
-<attribute name="VALUE" x="49.53" y="22.098" size="1.778" layer="96"/>
+<instance part="R4" gate="G$1" x="121.92" y="73.66" smashed="yes">
+<attribute name="NAME" x="118.11" y="75.1586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="118.11" y="70.358" size="1.778" layer="96"/>
 </instance>
-<instance part="GPS-DRIVER" gate="G$1" x="111.76" y="73.66" smashed="yes" rot="MR180">
-<attribute name="NAME" x="106.68" y="71.12" size="1.778" layer="95" rot="MR180"/>
-<attribute name="VALUE" x="101.6" y="68.58" size="1.778" layer="96" rot="MR180"/>
+<instance part="GPS-DRIVER" gate="G$1" x="111.76" y="76.2" smashed="yes" rot="MR180">
+<attribute name="NAME" x="106.68" y="73.66" size="1.778" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="101.6" y="71.12" size="1.778" layer="96" rot="MR180"/>
 </instance>
 <instance part="GSM-DRIVER" gate="G$1" x="50.8" y="76.2" smashed="yes" rot="MR0">
 <attribute name="NAME" x="55.88" y="78.74" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="60.96" y="81.28" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="GPS-POWER" gate="G$1" x="121.92" y="78.74" smashed="yes">
-<attribute name="NAME" x="127" y="81.28" size="1.778" layer="95"/>
-<attribute name="VALUE" x="127" y="78.74" size="1.778" layer="96"/>
+<instance part="GPS-POWER" gate="G$1" x="127" y="78.74" smashed="yes">
+<attribute name="NAME" x="132.08" y="81.28" size="1.778" layer="95"/>
+<attribute name="VALUE" x="132.08" y="78.74" size="1.778" layer="96"/>
 </instance>
 <instance part="GSM-POWER" gate="G$1" x="38.1" y="66.04" smashed="yes" rot="R180">
 <attribute name="NAME" x="33.02" y="63.5" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="33.02" y="66.04" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="RD1" gate="G$1" x="53.34" y="106.68" smashed="yes" rot="R90">
-<attribute name="NAME" x="51.8414" y="102.87" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="56.642" y="102.87" size="1.778" layer="96" rot="R90"/>
+<instance part="RD1" gate="G$1" x="55.88" y="106.68" smashed="yes" rot="R90">
+<attribute name="NAME" x="54.3814" y="102.87" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="59.182" y="102.87" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="RD2" gate="G$1" x="53.34" y="96.52" smashed="yes" rot="R90">
-<attribute name="NAME" x="51.8414" y="92.71" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="56.642" y="92.71" size="1.778" layer="96" rot="R90"/>
+<instance part="RD2" gate="G$1" x="55.88" y="96.52" smashed="yes" rot="R90">
+<attribute name="NAME" x="54.3814" y="92.71" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="59.182" y="92.71" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="S1" gate="1" x="43.18" y="114.3" smashed="yes">
 <attribute name="NAME" x="41.275" y="107.95" size="1.778" layer="95"/>
@@ -2410,13 +2410,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="A0" class="0">
 <segment>
 <pinref part="TBASE_L" gate="1" pin="2"/>
-<wire x1="71.12" y1="60.96" x2="58.42" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="60.96" x2="63.5" y2="60.96" width="0.1524" layer="91"/>
 <label x="66.04" y="60.96" size="1.778" layer="95"/>
 <pinref part="RD1" gate="G$1" pin="1"/>
 <pinref part="RD2" gate="G$1" pin="2"/>
-<wire x1="53.34" y1="101.6" x2="58.42" y2="101.6" width="0.1524" layer="91"/>
-<junction x="53.34" y="101.6"/>
-<wire x1="58.42" y1="101.6" x2="58.42" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="101.6" x2="63.5" y2="101.6" width="0.1524" layer="91"/>
+<junction x="55.88" y="101.6"/>
+<wire x1="63.5" y1="101.6" x2="63.5" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SCLK" class="0">
@@ -2452,8 +2452,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="TBASE_L" gate="1" pin="7"/>
 <label x="66.04" y="48.26" size="1.778" layer="95"/>
 <pinref part="GSM-DRIVER" gate="G$1" pin="B"/>
-<wire x1="53.34" y1="76.2" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="76.2" x2="53.34" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="71.12" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="48.26" x2="71.12" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="1"/>
+<wire x1="55.88" y1="71.12" x2="53.34" y2="71.12" width="0.1524" layer="91"/>
+<junction x="53.34" y="71.12"/>
 </segment>
 </net>
 <net name="3.3V" class="0">
@@ -2468,16 +2472,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="TBASE_R" gate="1" pin="1"/>
 <label x="101.6" y="45.72" size="1.778" layer="95" align="bottom-right"/>
 <pinref part="GPS-POWER" gate="G$1" pin="S"/>
-<wire x1="121.92" y1="73.66" x2="121.92" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="45.72" x2="96.52" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="127" y1="73.66" x2="127" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="127" y1="45.72" x2="96.52" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<junction x="127" y="73.66"/>
 </segment>
 <segment>
 <label x="129.54" y="58.42" size="1.778" layer="95" rot="R180"/>
-<wire x1="129.54" y1="58.42" x2="129.54" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="58.42" x2="134.62" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="GPS-POWER" gate="G$1" pin="D"/>
-<wire x1="129.54" y1="83.82" x2="121.92" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="83.82" x2="127" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="GPS" gate="1" pin="4"/>
-<wire x1="129.54" y1="58.42" x2="137.16" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="58.42" x2="137.16" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -2496,19 +2502,23 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </segment>
 <segment>
 <pinref part="GSM-DRIVER" gate="G$1" pin="C"/>
-<wire x1="48.26" y1="81.28" x2="53.34" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="81.28" x2="73.66" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="81.28" x2="55.88" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="81.28" x2="73.66" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="81.28" x2="73.66" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="GND-BAT" gate="G$1" pin="1"/>
-<pinref part="RD2" gate="G$1" pin="1"/>
-<wire x1="53.34" y1="91.44" x2="53.34" y2="81.28" width="0.1524" layer="91"/>
-<junction x="53.34" y="81.28"/>
 <pinref part="GND4" gate="1" pin="GND"/>
 <junction x="73.66" y="81.28"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<junction x="55.88" y="81.28"/>
+<pinref part="RD2" gate="G$1" pin="1"/>
+<wire x1="55.88" y1="91.44" x2="55.88" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GPS-DRIVER" gate="G$1" pin="C"/>
 <pinref part="GND3" gate="1" pin="GND"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+<junction x="114.3" y="71.12"/>
+<wire x1="114.3" y1="71.12" x2="114.3" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="GND"/>
@@ -2556,10 +2566,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="5/SCL" class="0">
 <segment>
 <pinref part="TBASE_R" gate="1" pin="6"/>
-<wire x1="96.52" y1="58.42" x2="109.22" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="58.42" x2="104.14" y2="58.42" width="0.1524" layer="91"/>
 <label x="101.6" y="58.42" size="1.778" layer="95" align="bottom-right"/>
+<wire x1="104.14" y1="58.42" x2="104.14" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="GPS-DRIVER" gate="G$1" pin="B"/>
-<wire x1="109.22" y1="73.66" x2="109.22" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="71.12" x2="104.14" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="76.2" x2="109.22" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<junction x="104.14" y="71.12"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -2572,12 +2586,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="S1" gate="1" pin="S"/>
 <pinref part="RD1" gate="G$1" pin="2"/>
-<wire x1="48.26" y1="111.76" x2="53.34" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="111.76" x2="55.88" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="GSM-POWER" gate="G$1" pin="S"/>
 <wire x1="38.1" y1="71.12" x2="38.1" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="86.36" x2="48.26" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="86.36" x2="48.26" y2="111.76" width="0.1524" layer="91"/>
 <junction x="48.26" y="111.76"/>
+<pinref part="R3" gate="G$1" pin="1"/>
+<junction x="38.1" y="71.12"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -2594,12 +2610,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="GSM-POWER" gate="G$1" pin="G"/>
 <wire x1="48.26" y1="71.12" x2="48.26" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="66.04" x2="45.72" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<junction x="48.26" y="71.12"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="GPS-DRIVER" gate="G$1" pin="E"/>
 <pinref part="GPS-POWER" gate="G$1" pin="G"/>
+<wire x1="119.38" y1="78.74" x2="116.84" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="116.84" y1="73.66" x2="116.84" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="GPS-DRIVER" gate="G$1" pin="E"/>
+<wire x1="114.3" y1="81.28" x2="116.84" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="81.28" x2="116.84" y2="78.74" width="0.1524" layer="91"/>
+<junction x="116.84" y="78.74"/>
 </segment>
 </net>
 <net name="TXD" class="0">
