@@ -5,7 +5,7 @@
 
 #define FONA_RX 12 
 #define FONA_TX 13
-#define FONA_RST 2
+#define FONA_RST 14
 
 TinyGPSPlus gps;
 
@@ -22,8 +22,8 @@ uint8_t type;
 
 long timeData;
 
-const int green =  16;
-const int red =  0;
+const int green =  2;
+const int red =  4;
 int ledState = LOW;
 
 unsigned long previousMillis = 0;   
@@ -31,7 +31,7 @@ unsigned long previousMillis = 0;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   
   pinMode(green, OUTPUT);
   pinMode(red, OUTPUT);
