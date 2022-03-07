@@ -22,6 +22,7 @@ class GSM {
     String received_date;
     String msg;
     const String PHONE = "+421948462229";
+    char pin[5] = {"0000"};
     const int id = 123;
     bool replyStatus = true;    
           
@@ -45,10 +46,22 @@ class GSM {
       delay(3000);      
       
       fona.begin(4800);
-      Serial.println("initializing...");
+      Serial.println("\ninitializing...");
     
       fona.println("AT"); //Once the handshake test is successful, it will back to OK
       updateSerial();
+
+      delay(2000);
+      char pincmd[14] = "AT+CPIN=";
+      pincmd[8] = pin[0];
+      pincmd[9] = pin[1];
+      pincmd[10] = pin[2];
+      pincmd[11] = pin[3];
+      pincmd[12] = '\0';
+      fona.println(pincmd);
+      delay(2000);
+      updateSerial();
+      
       
       fona.println("AT+CMGF=1"); // Configuring TEXT mode
       updateSerial();
@@ -57,26 +70,6 @@ class GSM {
       updateSerial();
     
     }          
-
-    /*---------------------------------------------------------------------------------------------------------------------------------*/
-    
-    byte recievedMessage() {
-      if (fona.available()) {
-        tempForSwitch = fona.read();
-      }
-      //if statement for message notice            
-      
-      switch (tempForSwitch) {
-        case '?': {
-            break;
-          }
-
-      
-        default: {
-          break;
-        }    
-      };
-    }   
         
     /*---------------------------------------------------------------------------------------------------------------------------------*/     
     
@@ -113,7 +106,7 @@ class GSM {
       buff.trim();
       //////////////////////////////////////////////////
       Serial.print("print3.1  ");
-      Serial.println(buff);
+      Serial.println(buff); //Response string
       //////////////////////////////////////////////////
       if(buff != "OK"){
         index = buff.indexOf(":");
@@ -159,7 +152,8 @@ class GSM {
           
             Serial.println("doAction");
             doAction();
-            //deleteSms();
+            fona.println("AT+CMGD=1,4"); 
+            updateSerial();
           
         }
       //////////////////////////////////////////////////
