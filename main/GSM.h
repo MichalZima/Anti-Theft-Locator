@@ -21,7 +21,7 @@ class GSM {
     String sender_number;
     String received_date;
     String msg;
-    const String PHONE = "+421911250477";
+    const String PHONE = "+421948462229";
     const int id = 123;
     bool replyStatus = true;    
           
@@ -42,7 +42,7 @@ class GSM {
     void Init() {
       pinMode(15, OUTPUT);
       digitalWrite(15, HIGH);            
-      //delay(1000);      
+      delay(3000);      
       
       fona.begin(4800);
       Serial.println("initializing...");
