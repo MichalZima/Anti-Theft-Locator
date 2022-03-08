@@ -1,25 +1,14 @@
+
 #include <TinyGPS++.h>
 #include <SoftwareSerial.h>
 #include "LED.h"
 
-//static const int RXPin = 1, TXPin = 3; //HARDWARE(PROGRAM) UART
-static const uint32_t GPSBaud = 9600;
-
-// The TinyGPS++ object
 TinyGPSPlus gps;
-
-// The serial connection to the GPS device
-//SoftwareSerial ss(RXPin, TXPin);
-
 LED myled;
-
-
 
 class GPS {
   
-  private:
-
-    uint8_t enablePin = 5;      
+  private:    
                   
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
@@ -35,37 +24,21 @@ class GPS {
         
     /*----------------------------------------------------------------------------------------------------------------------------------------*/   
   
-    void Init(){
-      pinMode(enablePin, OUTPUT);
-      digitalWrite(enablePin, HIGH);
-      //delay(1000);
-      Serial.begin(9600);      
+    void Startup(){
+      pinMode(GPSEnablePin, OUTPUT);
+      digitalWrite(GPSEnablePin, HIGH);      
     }    
 
-    /*----------------------------------------------------------------------------------------------------------------------------------------*/   
+    /*----------------------------------------------------------------------------------------------------------------------------------------*/
     
-    int signalStrength() {   
-      if (hdop <= 4) {
-        myled.Blik(250, "green");
-        signalIndex = 3;
-      }
-      else if (hdop > 4 && hdop <= 15) {
-        myled.Blik(250, "orange");      
-        signalIndex = 2;
-      }        
-      else if (hdop > 15 && hdop < 99) {
-        myled.Blik(250, "red");
-        signalIndex = 1;
-      }        
-      else if (hdop >= 99) {
-        myled.Light("red");      
-        signalIndex = 0;        
-      }
+    void Init(){
+      Serial.begin(GPSBaud);
+      smartDelay(1000); 
     }
+    
+    /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
-    /*----------------------------------------------------------------------------------------------------------------------------------------*/ 
-
-    bool updateData(){
+     bool updateData(){
       if (gps.charsProcessed() < 10) {
         myled.Blik(100, "red", 3);
         return false;
@@ -83,6 +56,27 @@ class GPS {
       }
     }        
         
+    /*----------------------------------------------------------------------------------------------------------------------------------------*/    
+    
+    int signalStrength() {   
+      if (hdop <= 4) {
+        myled.Light("green", 250);
+        signalIndex = 3;
+      }
+      else if (hdop > 4 && hdop <= 15) {
+        myled.Light("orange", 250);      
+        signalIndex = 2;
+      }        
+      else if (hdop > 15 && hdop < 99) {
+        myled.Light("red", 250);
+        signalIndex = 1;
+      }        
+      else if (hdop >= 99) {
+        myled.Light("red");      
+        signalIndex = 0;        
+      }
+    }
+
     /*----------------------------------------------------------------------------------------------------------------------------------------*/ 
         
     void smartDelay(unsigned long period) {

@@ -1,5 +1,5 @@
+
 #include "GSM.h"
-#include "values.h"
 
 GSM mysim;
 
@@ -8,16 +8,23 @@ GSM mysim;
 
 void setup() { 
   Serial.begin(115200);
+
+  //mygps.Startup();
+  //mysim.Startup();
+
   myled.Init();
+  myled.Test();
   //mygps.Init(); 
-  mysim.Init();
+  //mysim.Init();
 }
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void loop() {
-  mysim.updateSerial();
+  Serial.println("\nloop");
+  delay(1000);  
+  //mysim.updateSerial();
 
   // mygps.smartDelay(1);
   // if (mygps.signalIndex == 3) {
