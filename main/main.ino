@@ -9,30 +9,30 @@ GSM mysim;
 void setup() { 
   Serial.begin(115200);
 
-  //mygps.Startup();
-  //mysim.Startup();
+  // mygps.Startup();
+  // mysim.Startup();
 
   myled.Init();
   myled.Test();
-  //mygps.Init(); 
-  //mysim.Init();
+  // mygps.Init(); 
+  // mysim.Init();
 }
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void loop() {
-  Serial.println("\nloop");
-  delay(1000);  
-  //mysim.updateSerial();
+void loop() { 
+  mysim.updateSerial();
 
-  // mygps.smartDelay(1);
-  // if (mygps.signalIndex == 3) {
-  //   if (mygps.hasLocation) {
-  //     mysim.sendMessage();
-  //     delay(120000);         
-  //   }    
-  // }
+  mygps.smartDelay(1);
+  if (mygps.signalIndex == 3) {
+    if (mygps.hasLocation) {
+      mysim.sendMessage();       
+    }
+    else {
+      continue;
+    }    
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

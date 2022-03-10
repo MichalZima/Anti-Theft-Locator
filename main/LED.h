@@ -6,8 +6,11 @@ class LED {
 
   private:
 
-    int ledState = 1;
-
+    int ledState = 1; 
+    bool functionDone = true;
+    uint32_t previousMillis = 0;
+    uint8_t i = 0; 
+    
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
   public:
@@ -48,10 +51,13 @@ class LED {
     /*----------------------------------------------------------------------------------------------------------------------------------------*/     
 
     void Blik(const long INTERVAL, char COLOR[], int LOOPS) {
-      uint32_t previousMillis = millis();
-      uint8_t i = 0;
-
-      while (i < LOOPS*2) {
+      if (functionDone) {
+        previousMillis = millis();
+        i = 0;
+        functionDone = false
+      }
+      
+      if (i < LOOPS*2) {
 
         if (COLOR == "green") {
           digitalWrite(greenLedPin, ledState);
@@ -72,6 +78,9 @@ class LED {
           i++;          
         } 
       }
+      else {
+        functionDone = true;
+      }      
     }
 
     /*----------------------------------------------------------------------------------------------------------------------------------------*/     
@@ -98,7 +107,10 @@ class LED {
     /*----------------------------------------------------------------------------------------------------------------------------------------*/     
 
     void Light(char COLOR[8], uint32_t INTERVAL) {
-      uint32_t previousMillis = millis();
+      if (functionDone) {
+        previousMillis = millis();
+        functionDone = false
+      }
            
       if (COLOR == "green") {
         digitalWrite(greenLedPin, HIGH);
@@ -111,10 +123,14 @@ class LED {
       if (COLOR == "orange") {
         digitalWrite(greenLedPin, HIGH);
         digitalWrite(redLedPin, HIGH);        
-      }       
-      while (millis() - previousMillis < INTERVAL);
-      digitalWrite(greenLedPin, LOW);
-      digitalWrite(redLedPin, LOW);
+      }
+             
+      if (millis() - previousMillis < INTERVAL);
+      else {
+        functionDone = true;
+        digitalWrite(greenLedPin, LOW);
+        digitalWrite(redLedPin, LOW);
+      }
     }
 
 };
