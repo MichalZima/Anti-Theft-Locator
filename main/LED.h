@@ -9,13 +9,13 @@ class LED {
   private:
 
     int ledState = HIGH; 
-    bool functionDone = true;
     uint32_t previousMillis = 0;
     uint8_t i = 0; 
     
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
   public:
+    bool functionDone = true;
  
     /*----------------------------------------------------------------------------------------------------------------------------------------*/   
   
@@ -53,13 +53,7 @@ class LED {
     /*----------------------------------------------------------------------------------------------------------------------------------------*/     
 
     void Blik(const long INTERVAL, char COLOR[], int LOOPS) {
-      if (functionDone) {
-        previousMillis = millis();
-        i = 0;
-        functionDone = false;
-      }
-      
-      if (i < LOOPS*2) {
+      while (i < LOOPS*2) {
 
         if (COLOR == "green") {
           digitalWrite(greenLedPin, ledState);
@@ -79,10 +73,7 @@ class LED {
           previousMillis = millis();
           i++;          
         } 
-      }
-      else {
-        functionDone = true;
-      }      
+      }  
     }
 
     /*----------------------------------------------------------------------------------------------------------------------------------------*/     
@@ -109,11 +100,6 @@ class LED {
     /*----------------------------------------------------------------------------------------------------------------------------------------*/     
 
     void Light(char COLOR[8], uint32_t INTERVAL) {
-      if (functionDone) {
-        previousMillis = millis();
-        functionDone = false;
-      }
-           
       if (COLOR == "green") {
         digitalWrite(greenLedPin, HIGH);
         digitalWrite(redLedPin, LOW);        
@@ -127,14 +113,10 @@ class LED {
         digitalWrite(redLedPin, HIGH);        
       }
              
-      if (millis() - previousMillis < INTERVAL);
-      else {
-        functionDone = true;
-        digitalWrite(greenLedPin, LOW);
-        digitalWrite(redLedPin, LOW);
-      }
+      while (millis() - previousMillis > INTERVAL) 
+      digitalWrite(greenLedPin, LOW);
+      digitalWrite(redLedPin, LOW);
+  
     }
 
 };
-
-

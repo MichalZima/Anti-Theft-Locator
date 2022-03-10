@@ -38,13 +38,13 @@ class GSM {
 
     void Init() {     
       fona.begin(4800);
-      mygps.smartDelay(3000); 
+      delay(3000); 
       //Serial.println("\ninitializing...");
     
       fona.println("AT"); //Once the handshake test is successful, it will back to OK
       updateSerial();
 
-      mygps.smartDelay(2000);
+      delay(2000);
       char pincmd[14] = "AT+CPIN=";
       pincmd[8] = pin[0];
       pincmd[9] = pin[1];
@@ -52,7 +52,7 @@ class GSM {
       pincmd[11] = pin[3];
       pincmd[12] = '\0';
       fona.println(pincmd);
-      mygps.smartDelay(2000);
+      delay(2000);
       updateSerial();
       
       fona.println("AT+CMGF=1"); // Configuring TEXT mode
@@ -60,6 +60,7 @@ class GSM {
       
       fona.println("AT+CNMI=1,2,0,0,0"); // Decides how newly arrived SMS responses should be handled
       updateSerial();
+      delay(5000);
     
     }          
 
@@ -67,10 +68,10 @@ class GSM {
 
     void updateSerial() {
       delay(100);
-      // while (Serial.available()) 
-      // {
-      //   fona.write(Serial.read());//Forward what Serial received to Software Serial Port
-      // }
+//       while (Serial.available()) 
+//       {
+//         fona.write(Serial.read());//Forward what Serial received to Software Serial Port
+//       }
       while(fona.available()) 
       {
         parseresponse(fona.readString()); //Forward what Software Serial received to Serial Port
@@ -126,15 +127,12 @@ class GSM {
           }
         }
       }
-      else if (buff == "OK") {
-        myled.Light("green", 1000);
-      } 
-      else if (buff == "ERROR") {
-        myled.Light("red", 1000);
-      }
-      else {
-        myled.Light("orange", 1000);      
-      }
+//      else if (buff == "OK") {
+//        while (!myled.functionDone) myled.Light("green", 1000);
+//      } 
+//      else if (buff == "ERROR") {
+//        while (!myled.functionDone) myled.Light("red", 1000);
+//      }
     }
 
     /*---------------------------------------------------------------------------------------------------------------------------------*/
@@ -180,8 +178,8 @@ class GSM {
         if (mygps.signalIndex == 3) {
           if (mygps.hasLocation) {       
             if(replyStatus == true){
-              dtostrf(mygps.lat, 11, 9, latString);
-              dtostrf(mygps.lng, 11, 9, lngString);
+              dtostrf(mygps.Lat, 11, 9, latString);
+              dtostrf(mygps.Lng, 11, 9, lngString);
               strcpy(responseSMS, "http://maps.google.com/maps?q=loc:");
               strcat(responseSMS, latString);
               strcat(responseSMS, ",");

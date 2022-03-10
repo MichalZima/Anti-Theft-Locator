@@ -14,11 +14,11 @@ class GPS {
   
   public:
     long Time;
-    float speed;
-    float hdop = 100.0;    
+    float Speed;
+    float Hdop = 100.0;    
     uint8_t sats = 0;
-    double lat;
-    double lng;
+    double Lat;
+    double Lng;
     bool hasLocation = false;
     uint8_t signalIndex = 0;
         
@@ -26,52 +26,52 @@ class GPS {
   
     void Startup(){
       pinMode(GPSEnablePin, OUTPUT);
-      digitalWrite(GPSEnablePin, HIGH);      
+      digitalWrite(GPSEnablePin, HIGH); 
+      delay(1000);     
     }    
 
     /*----------------------------------------------------------------------------------------------------------------------------------------*/
     
     void Init(){
       Serial.begin(GPSBaud);
-      smartDelay(1000); 
+      delay(1000); 
     }
     
     /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
-     bool updateData(){
+     void updateData(){
       if (gps.charsProcessed() < 10) {
-        myled.Blik(100, "red", 3);
-        return false;
+        myled.Light("green");
+        delay(5000);
       }
       else if (gps.charsProcessed() >= 10) {            
-        if (gps.hdop.isUpdated() && gps.hdop.isValid()) hdop = gps.hdop.hdop();
-        if (gps.satellites.isUpdated() && gps.satellites.isValid()) sats = gps.satellites.value();      
-        if (gps.location.isUpdated() && gps.location.isValid()) {
-          lat = gps.location.lat();                           
-          lng = gps.location.lng();
+        if (gps.hdop.isUpdated()) Hdop = gps.hdop.hdop();
+        if (gps.satellites.isValid()) sats = gps.satellites.value();      
+        if (gps.location.isValid()) {
+          Lat = gps.location.lat();                           
+          Lng = gps.location.lng();
           hasLocation = true;          
         }
         signalStrength();
-        return true;
       }
     }        
         
     /*----------------------------------------------------------------------------------------------------------------------------------------*/    
     
     int signalStrength() {   
-      if (hdop <= 4) {
-        myled.Light("green", 250);
+      if (Hdop <= 4) {
+        myled.Light("green");
         signalIndex = 3;
       }
-      else if (hdop > 4 && hdop <= 15) {
-        myled.Light("orange", 250);      
+      else if (Hdop > 4 && Hdop <= 15) {
+        myled.Light("orange");      
         signalIndex = 2;
       }        
-      else if (hdop > 15 && hdop < 99) {
-        myled.Light("red", 250);
+      else if (Hdop > 15 && Hdop < 99) {
+        myled.Light("red");
         signalIndex = 1;
       }        
-      else if (hdop >= 99) {
+      else if (Hdop >= 99) {
         myled.Light("red");      
         signalIndex = 0;        
       }
@@ -84,8 +84,8 @@ class GPS {
       do {
         while (Serial.available()) {
           gps.encode(Serial.read());
-          updateData();
         }                    
+        updateData();
       } while (millis() - start < period);  
           
     }    
