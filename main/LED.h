@@ -1,12 +1,14 @@
 
 #include "VALUES.h"
 
+//VALUES myvalues;
+
 
 class LED {
 
   private:
 
-    int ledState = 1; 
+    int ledState = HIGH; 
     bool functionDone = true;
     uint32_t previousMillis = 0;
     uint8_t i = 0; 

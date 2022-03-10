@@ -177,15 +177,21 @@ class GSM {
       }
       
       if(msg == "poloha"){
-        if(replyStatus == true){
-          dtostrf(mygps.lat, 11, 9, latString);
-          dtostrf(mygps.lng, 11, 9, lngString);
-          strcpy(responseSMS, "http://maps.google.com/maps?q=loc:");
-          strcat(responseSMS, latString);
-          strcat(responseSMS, ",");
-          strcat(responseSMS, lngString);
-          sendSms(responseSMS);
+        if (mygps.signalIndex == 3) {
+          if (mygps.hasLocation) {       
+            if(replyStatus == true){
+              dtostrf(mygps.lat, 11, 9, latString);
+              dtostrf(mygps.lng, 11, 9, lngString);
+              strcpy(responseSMS, "http://maps.google.com/maps?q=loc:");
+              strcat(responseSMS, latString);
+              strcat(responseSMS, ",");
+              strcat(responseSMS, lngString);
+              sendSms(responseSMS);
+            }
+          }   
+          else sendSms("no location");
         }
+        else sendSms("no signal");
       }
       
       sms_status = "";
