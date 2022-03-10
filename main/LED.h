@@ -54,7 +54,7 @@ class LED {
       if (functionDone) {
         previousMillis = millis();
         i = 0;
-        functionDone = false
+        functionDone = false;
       }
       
       if (i < LOOPS*2) {
@@ -109,7 +109,7 @@ class LED {
     void Light(char COLOR[8], uint32_t INTERVAL) {
       if (functionDone) {
         previousMillis = millis();
-        functionDone = false
+        functionDone = false;
       }
            
       if (COLOR == "green") {
