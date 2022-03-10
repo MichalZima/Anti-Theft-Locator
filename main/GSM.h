@@ -11,8 +11,8 @@ class GSM {
 
   private:
 
-    char  latString[20];
-    char  lngString[20];
+    char*  latString;
+    char*  lngString;
     String sms_status;
     String sender_number;
     String received_date;
@@ -74,6 +74,7 @@ class GSM {
 //       }
       while(fona.available()) 
       {
+        digitalWrite(GPSEnablePin, LOW);
         parseresponse(fona.readString()); //Forward what Software Serial received to Serial Port
       }
     }
@@ -178,8 +179,8 @@ class GSM {
         if (mygps.signalIndex == 3) {
           if (mygps.hasLocation) {       
             if(replyStatus == true){
-              dtostrf(mygps.Lat, 11, 9, latString);
-              dtostrf(mygps.Lng, 11, 9, lngString);
+              dtostrf(mygps.Lat, 10, 7, latString);
+              dtostrf(mygps.Lng, 10, 7, lngString);
               strcpy(responseSMS, "http://maps.google.com/maps?q=loc:");
               strcat(responseSMS, latString);
               strcat(responseSMS, ",");
@@ -208,7 +209,7 @@ class GSM {
       fona.print(text);
       delay(100);
       fona.write(0x1A); //ascii code for ctrl-26 //fona.println((char)26); //ascii code for ctrl-26
-      delay(1000);
+      delay(500);
     }
 
 };

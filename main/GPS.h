@@ -60,19 +60,19 @@ class GPS {
     
     int signalStrength() {   
       if (Hdop <= 4) {
-        myled.Light("green");
+        //myled.Light("green");
         signalIndex = 3;
       }
       else if (Hdop > 4 && Hdop <= 15) {
-        myled.Light("orange");      
+        //myled.Light("orange");      
         signalIndex = 2;
       }        
       else if (Hdop > 15 && Hdop < 99) {
-        myled.Light("red");
+        //myled.Light("red");
         signalIndex = 1;
       }        
       else if (Hdop >= 99) {
-        myled.Light("red");      
+        //myled.Light("red");      
         signalIndex = 0;        
       }
     }
