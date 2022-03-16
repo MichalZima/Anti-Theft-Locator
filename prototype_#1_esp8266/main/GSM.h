@@ -11,8 +11,8 @@ class GSM {
 
   private:
 
-    char*  latString;
-    char*  lngString;
+    char  latString[15];
+    char  lngString[15];
     String sms_status;
     String sender_number;
     String received_date;
