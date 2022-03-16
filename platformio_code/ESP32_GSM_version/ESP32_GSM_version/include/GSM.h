@@ -11,8 +11,8 @@ class GSM {
 
   private:
 
-    char*  latString;
-    char*  lngString;
+    char  latString[15];
+    char  lngString[15];
     String sms_status;
     String sender_number;
     String received_date;
@@ -82,7 +82,6 @@ class GSM {
     /*---------------------------------------------------------------------------------------------------------------------------------*/  
 
     void parseresponse(String buff) {  // buff = AT response from gsm module
-      Serial.println(buff);
 
       unsigned int len, index;
   
@@ -190,7 +189,7 @@ class GSM {
           Serial.println(mygps.signalIndex);
           if (mygps.hasLocation) {       
             if(replyStatus == true){
-              Serial.println("everythig true");
+              Serial.println("everything true");
               dtostrf(mygps.Lat, 10, 7, latString);
               dtostrf(mygps.Lng, 10, 7, lngString);
               Serial.println("dtostrf done");
