@@ -44,7 +44,11 @@ class GSM {
       Serial.println("AT");
       updateSerial();
 
-      delay(2000);
+      fona.println("AT+CPIN=?"); //Once the handshake test is successful, it will back to OK
+      Serial.println("AT+CPIN=?");
+      updateSerial();
+
+      delay(1000);
       char pincmd[14] = "AT+CPIN=";
       pincmd[8] = pin[0];
       pincmd[9] = pin[1];
@@ -53,8 +57,8 @@ class GSM {
       pincmd[12] = '\0';
       fona.println(pincmd);
       Serial.println(pincmd);
-      delay(2000);
       updateSerial();
+      delay(1000);
       
       fona.println("AT+CMGF=1"); // Configuring TEXT mode
       Serial.println("AT+CMGF=1");
@@ -83,7 +87,7 @@ class GSM {
 
     void parseresponse(String buff) {  // buff = AT response from gsm module
 
-      unsigned int len, index;
+      unsigned int index;
   
       //Remove sent "AT Command" from the response string.
       index = buff.indexOf("\r");

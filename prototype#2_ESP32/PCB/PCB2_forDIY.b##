@@ -1180,8 +1180,8 @@ design rules under a new name.</description>
 <wire x1="22.5" y1="91.5" x2="28.5" y2="85.5" width="1.016" layer="1"/>
 <wire x1="33.5" y1="85.5" x2="28.5" y2="85.5" width="1.016" layer="1"/>
 <via x="33.5" y="85.5" extent="1-16" drill="0.8"/>
-<wire x1="19.67" y1="63" x2="34.5" y2="63" width="1.016" layer="1"/>
-<wire x1="19.67" y1="63" x2="19.67" y2="62.5" width="1.016" layer="1"/>
+<wire x1="34" y1="62.5" x2="34.5" y2="63" width="1.016" layer="1"/>
+<wire x1="34" y1="62.5" x2="19.67" y2="62.5" width="1.016" layer="1"/>
 <wire x1="19.67" y1="62.5" x2="19.67" y2="60.77" width="1.016" layer="1"/>
 <wire x1="19.2" y1="49.19" x2="13" y2="55.39" width="1.016" layer="1"/>
 <wire x1="13" y1="55.39" x2="13" y2="62" width="1.016" layer="1"/>

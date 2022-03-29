@@ -1,8 +1,10 @@
 
 #include <TinyGPS++.h>
+#include <HardwareSerial.h>
 #include "VARIABLES.h"
 
 TinyGPSPlus gps;
+HardwareSerial GPSSerial(2);
 
 class GPS {
   
@@ -31,7 +33,7 @@ class GPS {
     /*----------------------------------------------------------------------------------------------------------------------------------------*/
     
     void Init(){
-      Serial2.begin(GPSBaud, SERIAL_8N1, GPS_RXD2, GPS_TXD2);
+      GPSSerial.begin(GPSBaud, SERIAL_8N1, GPS_RXD2, GPS_TXD2);
       delay(1000); 
     }
     
@@ -195,8 +197,8 @@ class GPS {
     void smartDelay(unsigned long period) {
       unsigned long start = millis();
       do {
-        while (Serial2.available()) {
-          (gps.encode(Serial2.read()));
+        while (GPSSerial.available()) {
+          (gps.encode(GPSSerial.read()));
         }                    
         updateData();
         // printData();
